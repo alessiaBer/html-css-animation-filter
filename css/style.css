@@ -99,6 +99,7 @@
 .ex-4-square {
     animation-name: hide;
     animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes hide {
@@ -117,7 +118,7 @@
 .ex-5-square:hover {
     animation-name: bigger;
     animation-duration: 1s;
-    animation-timing-function: ease;
+    animation-fill-mode: forwards;
 }
 
 @keyframes bigger {
@@ -163,28 +164,43 @@
 }
 
 /*ex 8*/
-.ex-8-img 
-
-/*ex 9*/
-.ex-9-img {
-    transition: border-radius;
-    transition: filter 4s;
+.ex-8-img:hover {
+    animation-name: gr-br;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
+@keyframes gr-br {
+    0% {
+        filter: grayscale(0);
+        border-radius: 0;
+    }
+
+    100% {
+        filter: grayscale(1);
+        border-radius: 2rem;
+    }
+}
+/*ex 9*/
 .ex-9-img:hover {
-    filter: grayscale(1);
-    border-radius: 2rem;
     animation-name: scale;
-    animation-duration: 4s;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
 @keyframes scale {
     0% {
         width: 400px;
+        filter: grayscale(0);
+        border-radius: 0;
     }
 
     100% {
-        width: 200px;
+        width: 300px;
+        filter: grayscale(1);
+        border-radius: 2rem;
     }
 }
 
